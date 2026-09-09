@@ -1,0 +1,23 @@
+<!-- Queue Card -->
+<div class="card glass card-tall">
+    <div class="card-header header-between">
+        <div class="header-title">
+            <i data-lucide="list-todo" class="header-icon"></i>
+            <h2>Active Automation Queue</h2>
+        </div>
+        <span class="count-badge" id="queue-count">0 Reminders</span>
+    </div>
+    
+    <div class="card-body flex-column">
+        <div class="queue-list" id="queue-container">
+            <!-- Empty State -->
+            <div class="empty-state" id="queue-empty">
+                <i data-lucide="inbox" class="empty-icon"></i>
+                <h3>No reminders scheduled</h3>
+                <p>Write a command or click a template to deploy a task scheduler.</p>
+            </div>
+            
+            <!-- Queue Items populated dynamically -->
+        </div>
+    </div>
+</div>

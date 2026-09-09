@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(rgba(6, 182, 212, 0.08) 1.2px, transparent 0),
+        radial-gradient(rgba(2, 132, 199, 0.05) 1.2px, transparent 0);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1.5rem;
+}
+
+/* Ambient Moving Background Blobs (Soft Aqua & Sky Light Theme) */
+.blob {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.35;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.blob-purple {
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(56, 189, 248, 0.2) 100%);
+    width: 550px;
+    height: 550px;
+    top: 5%;
+    left: 5%;
+    animation: blob-float 22s infinite alternate ease-in-out;
+}
+
+.blob-blue {
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.35) 0%, rgba(20, 184, 166, 0.2) 100%);
+    width: 580px;
+    height: 580px;
+    bottom: 5%;
+    right: 5%;
+    animation: blob-float 28s infinite alternate-reverse ease-in-out;
+}
+
+/* Dashboard App Structure */
+.app-container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    animation: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+

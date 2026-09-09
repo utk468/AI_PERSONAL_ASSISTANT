@@ -1,0 +1,85 @@
+<!-- Command Box Card -->
+<div class="card glass glowing-card">
+    <div class="card-header">
+        <i data-lucide="terminal" class="header-icon"></i>
+        <h2>Natural Language Automation command</h2>
+    </div>
+
+    <div class="card-body">
+        <p class="card-description">
+            Tell the assistant what to remind you of in natural language. We'll extract intent, priority, recurrence,
+            and schedule it automatically.
+        </p>
+
+        <form id="reminder-form">
+            <div class="textarea-wrapper">
+                <textarea id="command-input"
+                    placeholder="Type e.g., 'Remind me to study ML every day at 7 PM' or 'Remind me to check the oven in 15 seconds'..."
+                    rows="3" required></textarea>
+                <div class="glow-border"></div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="clear-btn">
+                    <i data-lucide="trash-2"></i> Clear
+                </button>
+                <button type="submit" class="btn btn-primary" id="schedule-btn">
+                    <i data-lucide="sparkles"></i> Deploy Scheduler
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Suggestions Panel -->
+<div class="card glass">
+    <div class="card-header">
+        <i data-lucide="compass" class="header-icon"></i>
+        <h2>Quick Triggers & Templates</h2>
+    </div>
+    <div class="card-body">
+        <div class="suggestions-list">
+            <button class="suggest-btn" data-text="Remind me to study ML every day at 7 PM">
+                <span class="btn-text">ML Study Daily at 7 PM</span>
+            </button>
+            <button class="suggest-btn" data-text="Remind me to take a stretch break every hour">
+                <span class="btn-text">Hourly Stretch Break</span>
+            </button>
+            <button class="suggest-btn" data-text="Important: Remind me to submit project review tomorrow at 9 AM">
+                <span class="btn-text">Project Review tomorrow 9 AM</span>
+            </button>
+            <button class="suggest-btn" data-text="Remind me to test notification trigger in 10 seconds">
+                <span class="btn-text">Quick Test in 10 Secs</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- AI Extraction Dashboard -->
+<div class="card glass hidden" id="extraction-card">
+    <div class="card-header border-cyan">
+        <i data-lucide="eye" class="header-icon cyan-text"></i>
+        <h2>LangChain Intent Analysis</h2>
+        <span class="badge badge-success" id="parser-engine-badge">groq-openai/gpt-oss-20b</span>
+    </div>
+    <div class="card-body">
+        <table class="extraction-table">
+            <tr>
+                <td><i data-lucide="activity"></i> Task</td>
+                <td id="ext-task" class="bold-text">Study Machine Learning</td>
+            </tr>
+            <tr>
+                <td><i data-lucide="repeat"></i> Recurring</td>
+                <td id="ext-recurring">Yes (daily)</td>
+            </tr>
+            <tr>
+                <td><i data-lucide="zap"></i> Priority</td>
+                <td><span class="badge" id="ext-priority">Medium</span></td>
+            </tr>
+            <tr>
+                <td><i data-lucide="calendar"></i> Next Trigger</td>
+                <td id="ext-time" class="cyan-text">2026-05-24T19:00:00</td>
+            </tr>
+        </table>
+    </div>
+</div>
